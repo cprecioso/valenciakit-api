@@ -21,14 +21,14 @@ const handler = async (req, res) => {
     assert(feat.type, "feature");
     assert(feat.geometry.type, "point");
 
-    const [lon, lat] = feat.geometry.coordinates;
+    const [longitude, latitude] = feat.geometry.coordinates;
 
     let type = feat.properties.tipo;
     if (type === " " || !type) type = null;
 
     return {
-      id: `${lat}:${lon}`,
-      coordinate: { lat, lon },
+      id: `${latitude}:${longitude}`,
+      coordinate: { latitude, longitude },
       capacity: feat.properties.numplazas,
       type,
     };
