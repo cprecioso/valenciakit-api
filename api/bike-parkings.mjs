@@ -34,7 +34,10 @@ const handler = async (req, res) => {
     };
   });
 
-  res.setHeader("Cache-Control", "max-age=86400, stale-while-revalidate");
+  res.setHeader(
+    "Cache-Control",
+    "max-age=0, s-maxage=86400, stale-while-revalidate"
+  );
   res.status(200).json({ spots });
 };
 
