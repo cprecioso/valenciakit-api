@@ -1,9 +1,11 @@
 {
   "name": "valenciakit",
-  "packageManager": "yarn@3.2.1",
   "private": true,
   "engines": {
     "node": "16.x"
+  },
+  "dependencies": {
+    "got": "^12.0.4"
   },
   "devDependencies": {
     "@vercel/node": "^1.15.3",
@@ -13,7 +15,5 @@
     "prettier-plugin-sh": "^0.11.0",
     "typescript": "^4.6.4"
   },
-  "dependencies": {
-    "got": "^12.0.4"
-  }
+  "packageManager": "yarn@3.2.1"
 }
