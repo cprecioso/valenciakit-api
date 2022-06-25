@@ -23,6 +23,7 @@ const handler = async (req, res) => {
 
     const [longitude, latitude] = feat.geometry.coordinates;
 
+    /** @type {string | null} */
     let type = feat.properties.tipo;
     if (type === " " || !type) type = null;
 
