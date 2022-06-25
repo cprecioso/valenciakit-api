@@ -11,8 +11,15 @@ const GEOJSON_URL =
 const handler = async (req, res) => {
   assertHitCache(req);
 
+  const dataResponse = await got(GEOJSON_URL);
+
+  const lastModifiedHeader = dataResponse.headers["last-modified"];
+  const updatedAt = lastModifiedHeader
+    ? new Date(lastModifiedHeader)
+    : new Date(0);
+
   /** @type {import("../types/geojson-response").GeoJSONResponse} */
-  const data = await got(GEOJSON_URL).json();
+  const data = JSON.parse(dataResponse.body);
 
   assert.equal(data.type, "FeatureCollection");
   assert.equal(data.name, "gis.TRA_BICI_APARCAMIENTO");
@@ -39,7 +46,7 @@ const handler = async (req, res) => {
     "Cache-Control",
     "max-age=0, s-maxage=86400, stale-while-revalidate"
   );
-  res.status(200).json({ spots });
+  res.status(200).json({ updatedAt, spots });
 };
 
 export default handler;
