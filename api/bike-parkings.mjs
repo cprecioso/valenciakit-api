@@ -22,7 +22,7 @@ const handler = async (req, res) => {
   const data = JSON.parse(dataResponse.body);
 
   assert.equal(data.type, "FeatureCollection");
-  assert.equal(data.name, "gis.TRA_BICI_APARCAMIENTO");
+  assert(data.name === "gis.TRA_BICI_APARCAMIENTO" || data.name === "TRA_BICI_APARCAMIENTO");
 
   const spots = data.features.map((feat) => {
     assert(feat.type, "feature");
