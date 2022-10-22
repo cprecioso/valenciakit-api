@@ -8,7 +8,6 @@ const handler = async (req, res) => {
   assertHitCache(req);
 
   const bikeParkings = {
-    identifier: "bike-parkings",
     updatedAt: await getLastUpdated(),
   };
 
@@ -16,7 +15,7 @@ const handler = async (req, res) => {
     "Cache-Control",
     "max-age=0, s-maxage=86400, stale-while-revalidate"
   );
-  res.status(200).json({ bikeParkings });
+  res.status(200).json({ "bike-parkings": bikeParkings });
 };
 
 export default handler;
