@@ -7,6 +7,17 @@ import { assertHitCache } from "../src/util.mjs";
 const GEOJSON_URL =
   "https://geoportal.valencia.es/apps/OpenData/Trafico/tra_bici_aparcamiento.json";
 
+export const getLastUpdated = async () => {
+  const dataResponse = await got.head(GEOJSON_URL);
+
+  const lastModifiedHeader = dataResponse.headers["last-modified"];
+  const updatedAt = lastModifiedHeader
+    ? new Date(lastModifiedHeader)
+    : new Date(0);
+
+  return updatedAt;
+};
+
 /** @type {import("@vercel/node").VercelApiHandler} */
 const handler = async (req, res) => {
   assertHitCache(req);
