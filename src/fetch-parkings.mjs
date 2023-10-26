@@ -4,7 +4,7 @@ import got from "got";
 import assert from "node:assert/strict";
 
 const GEOJSON_URL =
-  "https://geoportal.valencia.es/apps/OpenData/Trafico/tra_bici_aparcamiento.json";
+  "https://valencia.opendatasoft.com/api/explore/v2.1/catalog/datasets/aparcaments-bicicletes-aparcamientos-bicicletas/exports/geojson?lang=es&timezone=Europe%2FBerlin";
 
 export const fetchParkings = async () => {
   const dataResponse = await got(GEOJSON_URL);
