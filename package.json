@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "yarn@4.5.3",
   "engines": {
-    "node": "18.x"
+    "node": "22.x"
   },
   "dependencies": {
     "ky": "^1.7.2"
