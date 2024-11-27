@@ -1,0 +1,12 @@
+{
+  "include": ["src/**/*", "api/**/*"],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": false,
+    "noEmit": true
+  }
+}
