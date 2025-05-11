@@ -2,21 +2,21 @@
   "name": "valenciakit",
   "type": "module",
   "private": true,
-  "packageManager": "yarn@4.5.3",
+  "packageManager": "yarn@4.9.1",
   "engines": {
     "node": "22.x"
   },
   "dependencies": {
-    "ky": "^1.7.2"
+    "ky": "^1.8.1"
   },
   "devDependencies": {
-    "@types/geojson": "^7946.0.14",
-    "@vercel/node": "^3.2.27",
-    "prettier": "3.4.1",
+    "@types/geojson": "^7946.0.16",
+    "@vercel/node": "^5.1.16",
+    "prettier": "3.5.3",
     "prettier-plugin-organize-imports": "4.1.0",
-    "prettier-plugin-pkg": "0.18.1",
-    "prettier-plugin-sh": "0.14.0",
-    "typescript": "~5.7.2",
-    "vercel": "^39.1.2"
+    "prettier-plugin-pkg": "0.19.1",
+    "prettier-plugin-sh": "0.17.4",
+    "typescript": "~5.8.3",
+    "vercel": "^41.7.4"
   }
 }
