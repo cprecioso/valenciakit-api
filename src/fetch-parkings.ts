@@ -59,7 +59,7 @@ export const fetchParkings = async () => {
     };
   });
 
-  const response = JSON.stringify({ updatedAt, spots });
+  const response = { updatedAt, spots };
 
   return { updatedAt, response };
 };
