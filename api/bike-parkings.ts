@@ -1,8 +1,8 @@
 import { fetchParkings } from "../src/fetch-parkings.js";
 import { assertHitCache } from "../src/util.js";
 
-export async function GET(req?: Request): Promise<Response> {
-  if (req) assertHitCache(req);
+export async function GET(req: Request): Promise<Response> {
+  assertHitCache(req);
 
   const { updatedAt, response } = await fetchParkings();
 
