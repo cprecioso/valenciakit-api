@@ -1,0 +1,9 @@
+{
+  "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.13",
+    "@std/path": "jsr:@std/path@^1.1.1",
+    "@types/geojson": "npm:@types/geojson@^7946.0.16",
+    "cookie": "npm:cookie@^1.0.2",
+    "ky": "npm:ky@^1.8.1"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@std/assert@^1.0.13": "1.0.13",
+    "jsr:@std/internal@^1.0.6": "1.0.9",
+    "jsr:@std/internal@^1.0.9": "1.0.9",
+    "jsr:@std/path@^1.1.1": "1.1.1",
+    "npm:@types/geojson@^7946.0.16": "7946.0.16",
+    "npm:cookie@^1.0.2": "1.0.2",
+    "npm:ky@^1.8.1": "1.8.1"
+  },
+  "jsr": {
+    "@std/assert@1.0.13": {
+      "integrity": "ae0d31e41919b12c656c742b22522c32fb26ed0cba32975cb0de2a273cb68b29",
+      "dependencies": [
+        "jsr:@std/internal@^1.0.6"
+      ]
+    },
+    "@std/internal@1.0.9": {
+      "integrity": "bdfb97f83e4db7a13e8faab26fb1958d1b80cc64366501af78a0aee151696eb8"
+    },
+    "@std/path@1.1.1": {
+      "integrity": "fe00026bd3a7e6a27f73709b83c607798be40e20c81dde655ce34052fd82ec76",
+      "dependencies": [
+        "jsr:@std/internal@^1.0.9"
+      ]
+    }
+  },
+  "npm": {
+    "@types/geojson@7946.0.16": {
+      "integrity": "sha512-6C8nqWur3j98U6+lXDfTUWIfgvZU+EumvpHKcYjujKH7woYyLj2sUmff0tRhrqM7BohUw7Pz3ZB1jj2gW9Fvmg=="
+    },
+    "cookie@1.0.2": {
+      "integrity": "sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA=="
+    },
+    "ky@1.8.1": {
+      "integrity": "sha512-7Bp3TpsE+L+TARSnnDpk3xg8Idi8RwSLdj6CMbNWoOARIrGrbuLGusV0dYwbZOm4bB3jHNxSw8Wk/ByDqJEnDw=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/assert@^1.0.13",
+      "jsr:@std/path@^1.1.1",
+      "npm:@types/geojson@^7946.0.16",
+      "npm:cookie@^1.0.2",
+      "npm:ky@^1.8.1"
+    ]
+  }
+}

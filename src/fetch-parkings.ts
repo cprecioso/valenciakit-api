@@ -1,6 +1,7 @@
+import { assertStrictEquals } from "@std/assert";
+// @ts-types="@types/geojson"
 import type { GeoJSON } from "geojson";
 import ky from "ky";
-import assert from "node:assert/strict";
 
 const DATASET_URL =
   "https://valencia.opendatasoft.com/api/explore/v2.1/catalog/datasets/aparcaments-bicicletes-aparcamientos-bicicletas";
@@ -20,15 +21,14 @@ const assertType: <Value extends { type: string }, Type extends Value["type"]>(
   value: Value,
   type: Type,
 ) => asserts value is Value & { type: Type } = (value, type) =>
-  assert(value.type.toLowerCase() === type.toLowerCase());
+  assertStrictEquals(value.type.toLowerCase(), type.toLowerCase());
 
 export const fetchParkings = async () => {
   const dataResponse = await ky(GEOJSON_URL, {
     headers: { Accept: "application/json" },
   });
 
-  const updatedAtString =
-    dataResponse.headers.get("Last-Modified") ||
+  const updatedAtString = dataResponse.headers.get("Last-Modified") ||
     (await getModifiedDateString());
   const updatedAt = updatedAtString ? new Date(updatedAtString) : new Date(0);
 
@@ -59,7 +59,5 @@ export const fetchParkings = async () => {
     };
   });
 
-  const response = { updatedAt, spots };
-
-  return { updatedAt, response };
+  return { updatedAt, spots };
 };
