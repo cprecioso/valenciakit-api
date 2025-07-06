@@ -8,6 +8,10 @@ on:
   schedule:
     - cron: '0 0 * * *' # Every day at midnight
 
+concurrency:
+  group: 'publish'
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
