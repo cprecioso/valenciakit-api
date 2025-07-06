@@ -35,6 +35,10 @@ export const fetchParkings = async () => {
   const data = await dataResponse.json<GeoJSON>();
   assertType(data, "FeatureCollection");
 
+  if (data.features.length === 0) {
+    throw new Error("No parking data found");
+  }
+
   const spots = data.features.map((feat) => {
     assertType(feat, "Feature");
     assertType(feat.geometry, "Point");
